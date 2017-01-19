@@ -20,13 +20,12 @@ module.exports = {
         loaders: [
             {
                 test: /.js$/,
-                loader: 'babel',
-                exclude: /node_modules/,
-                query: {
+                loader: ['react-hot, babel?' + JSON.stringify({
                     cacheDirectory: true,
                     presets: ['es2015', 'react'],
                     plugins: ["react-hot-loader/babel"]
-                }
+                })],
+                exclude: /node_modules/,
             }
         ]
     },
